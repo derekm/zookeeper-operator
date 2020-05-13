@@ -3,7 +3,7 @@ kind: "ZookeeperCluster"
 metadata:
   name: {{ template "zookeeper.fullname" . }}
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicas }}
   image:
     repository: {{ with .Values.image }}{{ .repository }}{{ end }}
     tag: {{ with .Values.image }}{{ .tag }}{{ end }}
